@@ -4,7 +4,7 @@ import { useState } from 'react';
 import TokenArtifact from "./artifacts/contracts/Token.sol/Token.json"
 const tokenAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
 
-
+const localBlockchainAddress = 'http://localhost:8545'
 
 function App() {
 
@@ -12,7 +12,8 @@ function App() {
  const [amount, setAmount] = useState()
  const [userAccountId, setUserAccountId] = useState()
 
- const provider = new ethers.providers.Web3Provider(window.ethereum);
+ const provider = new ethers.providers.JsonRpcProvider(localBlockchainAddress)
+
  const signer = provider.getSigner();
 
  async function _intializeContract(init) {
