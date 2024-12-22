@@ -20,6 +20,11 @@ deploy contract
 npx hardhat run --network localhost scripts/deploy.js
 ```
 
+Set up NODE_OPTIONS with legacy provider
+```shell
+export NODE_OPTIONS=--openssl-legacy-provider
+```
+
 Start React app
 ```shell
 npm start
